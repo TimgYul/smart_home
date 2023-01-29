@@ -5,36 +5,6 @@ from rest_framework.response import Response
 from measurement.models import Sensor, Measurement
 from measurement.serializers import SensorDetailSerializer, MeasurementSerializer, SensorSerializer
 
-#   # Создание и просмотр датчиков
-# class SensorView(CreateAPIView,ListCreateAPIView):
-#     serializer_class = SensorDetailSerializer
-
-#     def get_queryset(self):
-#         queryset = Sensor.objects.all()
-#         return queryset
-
-#     def perform_create(self, serializer):
-#         serializer.save()
-
-
-# # Обновление датчика
-# class UpdateSensorView(RetrieveUpdateAPIView):
-#     serializer_class = SensorDetailSerializer
-
-#     def get_queryset(self):
-#         queryset = Sensor.objects.all()
-#         return queryset
-
-#     def perform_update(self, serializer):
-#         serializer.save()
-
-
-# # Добавить измерение
-# class AddMeasurementView(CreateAPIView):
-#     serializer_class = MeasurementSerializer
-
-#     def perform_update(self, serializer):
-#         serializer.save()  
         
 class SensorGetView(ListCreateAPIView):
     queryset = Sensor.objects.all() 
