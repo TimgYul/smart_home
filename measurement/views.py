@@ -61,9 +61,9 @@ class CurrentSensor(RetrieveUpdateAPIView):
     
      # просмотр выбранного датчика
     def get(self, request, pk):
-        data = Sensor.objects.filter(id=pk)
-        ser = SensorDetailSerializer(data)
-        return Response(ser)
+        sensor = self.get_object()
+        ser = SensorDetailSerializer(sensor)
+        return Response(ser.data)
     
 
 class MeasurementGetView(CreateAPIView):
